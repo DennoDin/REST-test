@@ -47,6 +47,7 @@ app.post("/signup", (req, res) => {
 app.get("/users/:user_id", (req, res) =>{
     console.log("test!!!!!")
     console.log(req.body)
+    console.log(req.headers)
     res.send(500);
 })
 
