@@ -27,12 +27,17 @@ app.post("/signup", (req, res) => {
             duplicateFound = true;
         }
     })
-
     if(duplicateFound){
         res.status(400).send({
             "message": "Account creation failed",
             "cause": "already same user_id is used"
         });
+    } else {
+        tempDatabase.accounts.push(
+        {
+            "user_id": req.body.user_id, 
+            "password": req.body.password
+        })
     }
 
     res.status(200).send({
