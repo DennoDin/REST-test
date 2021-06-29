@@ -1,6 +1,8 @@
 const express = require("express")
 
-const tempDatabase = {};
+const tempDatabase = {
+    "accounts": [], //{user_id: string, password: string}
+};
 
 const app = express();
 app.use(express.json())
@@ -11,13 +13,14 @@ app.get('/', (req, res) => {
     res.send("Hi There").status(200);
 })
 
-app.post("/signup", (req, res) => {
+app.post("signup", (req, res) => {
     if(!req.body.user_id || !req.body.password){
         res.status(400).send({
             "message": "Account creation failed",
             "cause": "required user_id and password"
         });
     }
+    
     res.status(200).send({
         "message": "Account successfully created",
         "user": {
