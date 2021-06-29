@@ -48,7 +48,7 @@ app.get("/users/:user_id", (req, res) =>{
     console.log("TODO: Please Implement")
 })
 
-app.patch("/users/{user_id}", (req, res) => {
+app.patch("/users/:user_id", (req, res) => {
     console.log("TODO: Please Implement")
 })
 
