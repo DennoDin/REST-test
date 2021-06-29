@@ -12,7 +12,8 @@ app.get('/', (req, res) => {
 })
 
 app.post("/signup", (req, res) => {
-    console.log("!!!!!REQBODY:", req.body);
+    res.send(`This is the body: ${req.body}`).status(200)
+    // console.log("!!!!!REQBODY:", req.body);
 })
 
 app.get("/users/{user_id}", (req, res) =>{
