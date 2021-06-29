@@ -46,6 +46,7 @@ app.post("/signup", (req, res) => {
 
 app.get("/users/:user_id", (req, res) =>{
     console.log(req.header)
+    res.send(500);
 })
 
 app.patch("/users/:user_id", (req, res) => {
