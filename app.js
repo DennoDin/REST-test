@@ -6,7 +6,7 @@ app.use(express.json())
 app.use(express.static("public"));
 
 app.get('/', (req, res) => {
-    res.status(200);
+    res.sendStatus(200);
 })
 
 app.post("/signup", (req, res) => {
