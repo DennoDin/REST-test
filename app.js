@@ -20,7 +20,21 @@ app.post("/signup", (req, res) => {
             "cause": "required user_id and password"
         });
     }
+    let duplicateFound = false;
     
+    tempDatabase.accounts.forEach(account => {
+        if(account.user_id === req.body.user_id){
+            duplicateFound = true;
+        }
+    })
+
+    if(duplicateFound){
+        res.status(400).send({
+            "message": "Account creation failed",
+            "cause": "already same user_id is used"
+        });
+    }
+
     res.status(200).send({
         "message": "Account successfully created",
         "user": {
