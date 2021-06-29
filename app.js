@@ -18,6 +18,13 @@ app.post("/signup", (req, res) => {
             "cause": "required user_id and password"
         });
     }
+    res.status(200).send({
+        "message": "Account successfully created",
+        "user": {
+            "user_id": req.body.user_id,
+            "nickname": req.body.user_id,
+        }
+    })
 })
 
 app.get("/users/{user_id}", (req, res) =>{
