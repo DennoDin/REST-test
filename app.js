@@ -12,7 +12,12 @@ app.get('/', (req, res) => {
 })
 
 app.post("/signup", (req, res) => {
-    res.sendStatus(404);
+    if(!req.body.user_id || !req.body.password){
+        res.send({
+            "message": "Account creation failed",
+            "cause": "required user_id and password"
+        }).status(400);
+    }
 })
 
 app.get("/users/{user_id}", (req, res) =>{
