@@ -54,7 +54,12 @@ app.get("/users/:user_id", (req, res) =>{
     const pass = tempDatabase.accounts.find(x => x.user_id === id).password;
 
     const authString = Buffer.from(`${id}:${pass}`).toString('base64')
-    res.send(401);
+    
+    if(req.headers.authorization === `Basic ${authString}`){
+        res.sendStatus(200);
+    } else {
+        res.send(401);
+    }
 })
 
 app.patch("/users/:user_id", (req, res) => {
