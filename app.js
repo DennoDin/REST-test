@@ -44,7 +44,7 @@ app.post("/signup", (req, res) => {
     })
 })
 
-app.get("/users/{user_id}", (req, res) =>{
+app.get("/users/:user_id", (req, res) =>{
     console.log("TODO: Please Implement")
 })
 
