@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
     res.send("Hi There").status(200);
 })
 
-app.post("signup", (req, res) => {
+app.post("/signup", (req, res) => {
     if(!req.body.user_id || !req.body.password){
         res.status(400).send({
             "message": "Account creation failed",
