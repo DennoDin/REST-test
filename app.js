@@ -1,5 +1,7 @@
 const express = require("express")
 
+const tempDatabase = {};
+
 const app = express();
 app.use(express.json())
 
@@ -10,7 +12,7 @@ app.get('/', (req, res) => {
 })
 
 app.post("/signup", (req, res) => {
-    console.log(req.body);
+    console.log("!!!!!REQBODY:", req.body);
 })
 
 app.get("/users/{user_id}", (req, res) =>{
