@@ -51,12 +51,9 @@ app.post("/signup", (req, res) => {
 
 app.get("/users/:user_id", (req, res) =>{
     const id = req.params.user_id;
-    const pass = tempDatabase.accounts[tempDatabase.accounts.find(x => x.user_id === id)].password;
-    console.log("test!!!!!")
-    console.log(req.body)
-    console.log(req.headers)
-    const authString = btoa(`${id}:${pass}`)
-    // if()
+    const pass = tempDatabase.accounts.find(x => x.user_id === id).password;
+
+    const authString = Buffer.from(`${id}:${pass}`).toString('base64')
     res.send(401);
 })
 
