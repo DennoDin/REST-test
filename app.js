@@ -50,8 +50,9 @@ app.get("/users/:user_id", (req, res) =>{
     console.log("test!!!!!")
     console.log(req.body)
     console.log(req.headers)
-    const authString = btoa(``)
-    res.send(500);
+    const authString = btoa(`${id}:${pass}`)
+    // if()
+    res.send(401);
 })
 
 app.patch("/users/:user_id", (req, res) => {
