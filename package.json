@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DennoDin/RetailAI-REST-test/issues"
   },
-  "homepage": "https://github.com/DennoDin/RetailAI-REST-test#readme"
+  "homepage": "https://github.com/DennoDin/RetailAI-REST-test#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
